@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>Docker</h2>
+					<p>Vocês conhecem a iniciativa Docker ?</p>
+					<img class="fragment fade-right" width="400" src="https://miro.medium.com/max/1200/1*j_zP74-cpvXRcs8dM_pkMQ.jpeg" alt="Logo Docker"> 
+				</section>
+				<section>
+					<h2>O que é Docker ? </h2>
+					<p>Docker é uma plataforma de código aberto desenvolvida em Go, que garante maior facilidade na criação e administração de ambientes isolados</p>
+				</section>
+
+				<section>
+					<h2>VM x Container</h2>
+					<img class="fragment fade-right" width="600" src="https://blogs.bmc.com/wp-content/uploads/2018/07/containers-vs-virtual-machines.jpg" alt="VM x Container"> 
+				</section>
+				
+				<section>
+					<section>
+						<h2>Container</h2>
+						<p>Virtualiza um sistema operacional</p>
+						<img class="fragment fade-right" width="600" src="images/docker-ps.png" alt="Comando Docker ps"> 
+					</section>
+					<section>
+						<h2>Vantagens</h2>
+						<p>
+							<ul class="fragment fade-up"> 
+								<li>
+									Criação de ambientes de forma rápida e fácil 
+								</li>
+								<li>
+									Bom desempenho 
+								</li>
+								<li>
+									Fácil gerenciamento de recursos
+								</li>
+							</ul>
+						</p>
+					</section>
+				</section>
+				<section>
+					<h2>Dockerfile & Docker-compose</h2>
+					<img class="fragment fade-right" width="400" src="https://i.stack.imgur.com/jc2IW.jpg" alt="Dockerfile"> 
+					<img class="fragment fade-right" width="400" src="https://miro.medium.com/max/906/1*QVFjsW8gyIXeCUJucmK4XA.png" alt="Comando Docker ps"> 
+				</section>
+				<section>
+					<h2>Dockerfile</h2>
+					<img class="fragment fade-right" width="400" src="images/dockerfile.png" alt="Dockerfile"> 
+				</section>
+				<section>
+					<h2>Dockerfile</h2>
+					<a href="https://github.com/docker-library/redis/blob/master/5.0/Dockerfile">Redis</a> 
+				</section>
+				<section>
+					<h2>Docker-compose</h2>
+					<img class="fragment fade-right" width="400" src="images/docker-compose.png" alt="Dockerfile"> 
+				</section>
+				<section>
+					<h2>Executando Docker-compose</h2>
+					<img class="fragment fade-right" width="700" src="images/execucao-docker-compose.png" alt="Dockerfile"> 
+				</section>
+				<section>
+					<h2>Comandos legais</h2>
+					<p>
+						<ul class="fragment fade-up"> 
+							<li>
+								Listar ativos: <b>docker ps</b> 
+							</li>
+							<li>
+								Listar inativos: <b>docker ps -a</b>
+							</li>
+							<li>
+								Desativar container: <b>docker stop id_container</b>
+							</li>
+							<li>
+								Excluir container: <b>docker rm id_container</b>
+							</li>
+							<li>
+								Entrar no container: <b>docker exec -it id_container bash</b>
+							</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Comandos legais</h2>
+					<p>
+						<ul class="fragment fade-up"> 
+							<li>
+								Buildar e ativar: <b>docker-compose up -d --build</b> 
+							</li>
+							<li>
+								Ativar: <b>docker-compose up -d</b>
+							</li>
+							<li>
+								Parar e excluir: <b>docker-compose down</b>
+							</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Links legais</h2>
+					<p>
+						<ul class="fragment fade-up"> 
+							<li>
+								<a href="https://hub.docker.com/">Docker hub</a> 
+							</li>
+							<li>
+								<a href="https://docs.docker.com/compose/django/">Django + Postgres + Docker</a>
+							</li>
+							<li>
+								<a href="https://docs.docker.com/compose/compose-file/">Documentação compose-file</a>
+							</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h2>Proxima etapa</h2>
+					<p>Vocês conhecem a iniciativa Jenkins? </p>
+					<img class="fragment fade-right" width="400" src="https://www.mundodocker.com.br/wp-content/uploads/2016/08/jenkins-e-docker.png" alt="Dockerfile"> 
+					
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
